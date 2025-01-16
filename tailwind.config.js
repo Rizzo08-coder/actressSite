@@ -14,9 +14,6 @@ module.exports = {
                 'all-screens':'100000px'
             },
             fontFamily: {
-                playfairitalic: ["PlayFair Italic"],
-                playfairregular: ["PlayFair Regular"],
-                playfairbold: ["PlayFair Bold"],
                 neutrafacebold: ["Neutraface Bold"],
                 neutrafaceregular: ["Neutraface Regular"],
             },
