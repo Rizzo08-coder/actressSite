@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('directed_by');
             $table->string('collaboration');
+            $table->string('img_url');
             $table->timestamps();
         });
     }

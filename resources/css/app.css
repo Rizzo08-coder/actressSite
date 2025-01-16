@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'PlayFair Italic';
+    src: url('/public/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PlayFair Regular';
+    src: url('/public/fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PlayFair Bold';
+    src: url('/public/fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neutraface Bold';
+    src: url('/public/fonts/Neutraface Text Bold.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neutraface Regular';
+    src: url('/public/fonts/Neutraface Text Book.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}

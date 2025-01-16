@@ -1,20 +1,28 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
-
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
+    darkMode: 'class',
     content: [
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./node_modules/flowbite/**/*.js",
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/**/*.blade.php',
-        './resources/**/*.js',
-        './resources/**/*.vue',
+        "./public/js/**/*.js"
     ],
     theme: {
         extend: {
+            screens:{
+                'all-screens':'100000px'
+            },
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                playfairitalic: ["PlayFair Italic"],
+                playfairregular: ["PlayFair Regular"],
+                playfairbold: ["PlayFair Bold"],
+                neutrafacebold: ["Neutraface Bold"],
+                neutrafaceregular: ["Neutraface Regular"],
             },
         },
     },
-    plugins: [],
-};
+    plugins: [
+        require('flowbite/plugin'),
+    ],
+}

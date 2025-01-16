@@ -11,7 +11,7 @@ class Show extends Model
     protected $table='show';
     public $timestamps=true;
 
-    protected $fillable=['title','description','directed_by', 'collaboration'];
+    protected $fillable=['title','description','directed_by', 'collaboration', 'img_url'];
 
     public function events(){
         return $this->hasMany(Event::class,'show_id','id');
