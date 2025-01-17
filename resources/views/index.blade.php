@@ -23,20 +23,20 @@
     <div class="flex justify-center">
         <div class="scroll imgBox" style="--time:50s">
             <div>
-                <img src="{{url('/')}}/img/attrice1.jpg" class="rounded-lg w-72 h-72 object-cover">
-                <img src="{{url('/')}}/img/attrice1.jpg" class="rounded-lg w-72 h-72 object-cover">
-                <img src="{{url('/')}}/img/attrice1.jpg" class="rounded-lg w-72 h-72 object-cover">
-                <img src="{{url('/')}}/img/attrice1.jpg" class="rounded-lg w-72 h-72 object-cover">
-                <img src="{{url('/')}}/img/attrice1.jpg" class="rounded-lg w-72 h-72 object-cover">
-                <img src="{{url('/')}}/img/attrice1.jpg" class="rounded-lg w-72 h-72 object-cover">
+                <img src="{{url('/')}}/img/spettacolo7.png" class="rounded-lg w-72 h-72 object-cover">
+                <img src="{{url('/')}}/img/spettacolo1.png" class="rounded-lg w-72 h-72 object-cover">
+                <img src="{{url('/')}}/img/spettacolo3.png" class="rounded-lg w-72 h-72 object-cover">
+                <img src="{{url('/')}}/img/spettacolo1.png" class="rounded-lg w-72 h-72 object-cover">
+                <img src="{{url('/')}}/img/spettacolo5.png" class="rounded-lg w-72 h-72 object-cover">
+                <img src="{{url('/')}}/img/spettacolo2.jpg" class="rounded-lg w-72 h-72 object-cover">
             </div>
             <div>
-                <img src="{{url('/')}}/img/attrice1.jpg" class="rounded-lg w-72 h-72 object-cover">
-                <img src="{{url('/')}}/img/attrice1.jpg" class="rounded-lg w-72 h-72 object-cover">
-                <img src="{{url('/')}}/img/attrice1.jpg" class="rounded-lg w-72 h-72 object-cover">
-                <img src="{{url('/')}}/img/attrice1.jpg" class="rounded-lg w-72 h-72 object-cover">
-                <img src="{{url('/')}}/img/attrice1.jpg" class="rounded-lg w-72 h-72 object-cover">
-                <img src="{{url('/')}}/img/attrice1.jpg" class="rounded-lg w-72 h-72 object-cover">
+                <img src="{{url('/')}}/img/spettacolo7.png" class="rounded-lg w-72 h-72 object-cover">
+                <img src="{{url('/')}}/img/spettacolo1.png" class="rounded-lg w-72 h-72 object-cover">
+                <img src="{{url('/')}}/img/spettacolo3.png" class="rounded-lg w-72 h-72 object-cover">
+                <img src="{{url('/')}}/img/spettacolo1.png" class="rounded-lg w-72 h-72 object-cover">
+                <img src="{{url('/')}}/img/spettacolo5.png" class="rounded-lg w-72 h-72 object-cover">
+                <img src="{{url('/')}}/img/spettacolo2.jpg" class="rounded-lg w-72 h-72 object-cover">
             </div>
         </div>
     </div>
@@ -85,7 +85,7 @@
         <div class="grid grid-cols-3 gap-6">
             @foreach($event_list as $event)
                 <div class="bg-white rounded-lg shadow-md overflow-hidden mx-8 p-6">
-                    <h3 class="text-xl font-bold text-gray-800">{{$event->show->title}}</h3>
+                    <h3 class="text-xl font-bold text-gray-800">{{strtoupper($event->show->title)}}</h3>
 
                     <!-- Data e ora -->
                     <div class="mt-4 flex items-center">
@@ -123,15 +123,15 @@
         <div class="space-y-6">
             @foreach($event_list as $event)
                 <div class="bg-white rounded-lg shadow-md overflow-hidden mx-8 p-6">
-                    <h3 class="text-xl font-bold text-gray-800">{{$event->show->title}}</h3>
+                    <h3 class="text-xl font-bold text-gray-800">{{strtoupper($event->show->title)}}</h3>
 
                     <!-- Data e ora -->
                     <div class="mt-4 flex items-center">
                         <div class="text-yellow-500 font-semibold text-lg">
-                            📅 {{$event->data}}
+                            📅 {{\Carbon\Carbon::parse($event->data)->format('d/m/Y')}}
                         </div>
                         <div class="ml-6 text-gray-700 font-medium text-lg">
-                            ⏰ {{$event->hour}}
+                            ⏰ {{\Carbon\Carbon::parse($event->hour)->format('H:i')}}
                         </div>
                     </div>
 
@@ -141,16 +141,16 @@
                         <p class="mt-1 text-gray-600">{{$event->place}}</p>
                     </div>
 
-                    <!-- Pulsante per ulteriori informazioni -->
-                    <div class="mt-6 flex justify-end">
-                        <button class="border border-yellow-500 text-yellow-500 px-6 py-2  hover:bg-yellow-500 hover:text-white transition">
-                            Maggiori informazioni
-                        </button>
-                    </div>
                 </div>
 
             @endforeach
 
+        </div>
+
+        <div class="mt-12 flex justify-center">
+            <a href="{{route('event')}}" class="border border-yellow-500 text-yellow-500 px-6 py-2 hover:bg-yellow-500 hover:text-white transition">
+                Scopri più date
+            </a>
         </div>
     </div>
 

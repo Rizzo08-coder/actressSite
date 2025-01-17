@@ -38,7 +38,7 @@
         @foreach($event_list as $event)
             <div class="bg-white shadow-md rounded-lg overflow-hidden p-6 mb-8">
                 <!-- Titolo -->
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">{{$event->show->title}}</h2>
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">{{strtoupper($event->show->title)}}</h2>
 
                 <!-- Dettagli evento -->
                 <div class="flex items-center justify-between text-lg">

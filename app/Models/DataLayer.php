@@ -22,4 +22,15 @@ class DataLayer extends Model
         ->take(3)                   // Limita a 3 risultati
         ->get();
     }
+
+    public function nameShowExists($name){
+        $num_show=Show::where('title',$name)->count();
+        if($num_show == 0)
+            return false;
+        return true;
+    }
+
+    public function getShowByTitle($name){
+        return Show::where('title',$name)->first();
+    }
 }

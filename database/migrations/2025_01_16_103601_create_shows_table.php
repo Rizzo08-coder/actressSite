@@ -11,10 +11,12 @@ return new class extends Migration
         Schema::create('show',function (Blueprint $table){
             $table->increments('id');
             $table->string('title');
-            $table->string('description');
+            $table->string('short_description');
+            $table->text('description');
             $table->string('directed_by');
             $table->string('collaboration');
             $table->string('img_url');
+            $table->date('data_creation');
             $table->timestamps();
         });
     }

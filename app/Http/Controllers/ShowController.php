@@ -12,4 +12,14 @@ class ShowController extends Controller
         $show_list = $dl->listShows();
         return view('show',compact('show_list'));
     }
+
+    public function show($name){
+        $dl = new DataLayer();
+        if (!($dl->nameShowExists($name))) {
+            abort(404);
+        }
+        $show = $dl->getShowByTitle($name);
+        return view('singleshow',compact('show'));
+    }
+
 }
