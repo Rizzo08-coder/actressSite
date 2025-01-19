@@ -25,10 +25,10 @@
 
 
 
-<nav class="border-gray-200 bg-[#BAB700]  fixed w-full top-0 z-50">
+<nav class="shadow-2xl border-gray-200 bg-[#BAB700]  fixed w-full top-0 z-50">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="{{route('home')}}" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <span class="self-center text-5xl text-white font-semibold whitespace-nowrap dark:text-white font-neutrafacebold">PAOLA RIZZI</span>
+                <span class="self-center text-4xl text-white font-semibold whitespace-nowrap dark:text-white font-neutrafacebold">SIGNORA MARIA</span>
         </a>
         <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="md:hidden inline-flex items-center p-2 text-sm text-gray-500 rounded-lg focus:outline-none ml-auto">
             <span class="sr-only">Open sidebar</span>
@@ -61,58 +61,59 @@
 
 
 
-    <aside id="logo-sidebar" class="fixed font-cabritobold text-center top-0 right-0 z-50 w-screen h-screen pt-20 transition-transform translate-x-full bg-white border-l border-gray-200 all-screens:translate-x-0 text-lg duration-500" aria-label="Sidebar">
+    <aside id="logo-sidebar" class="bg-[#5d5e5d] w-full fixed font-cabritobold text-center top-0 right-0 z-50 w-screen h-screen pt-20 transition-transform translate-x-full all-screens:translate-x-0 text-lg duration-500" aria-label="Sidebar">
 
-    <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class=" absolute top-0 left-0 p-3 m-4 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+    <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class=" absolute top-0 left-0 p-3 m-4 text-sm text-gray-500 rounded-lg hover:bg-[#353535] focus:outline-none focus:ring-2 focus:ring-[#353535]">
             <span class="sr-only">Open sidebar</span>
             <svg viewBox="0 0 10 10" class="w-3.5 h-3.5 overflow-visible"><path d="M0 0L10 10M10 0L0 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
         </button>
 
 
-        <div class="h-full px-3 pb-4 overflow-y-auto bg-white ">
+        <div class="h-full px-3 pb-4 overflow-y-auto ">
             <ul class="space-y-2 text-sm">
                 <li class="flex justify-center mb-6">
                     <a href="{{route('home')}}" class="flex items-center ">
-                            <span class="self-center text-5xl text-[#ea000e] font-neutrafacebold font-semibold whitespace-nowrap ">PAOLA RIZZI</span>
+                            <span class="self-center text-4xl text-[#BAB700] font-neutrafacebold font-semibold whitespace-nowrap ">SIGNORA MARIA</span>
                     </a>
                 </li>
                 <li class="mt-6 ">
-                    <div class="border border-yellow-500"></div>
-                    <a href="{{route('home')}}" class="@yield('home-nv-sm') flex items-center p-2 pt-4 pb-3 text-gray-900 hover:text-[#ea000e] ">
+                    <div class="border border-[#BAB700]"></div>
+                    <a href="{{route('home')}}" class="@yield('home-nv-sm') flex items-center p-2 pt-4 pb-3 text-white hover:text-[#BAB700] ">
                         <span class="flex-1 whitespace-nowrap"> Home </span>
                     </a>
-                    <div class="border border-yellow-500"></div>
+                    <div class="border border-[#BAB700]"></div>
                 </li>
                 <li >
-                    <a href="{{route('show')}}" class="@yield('spettacoli-nv-sm') flex items-center p-2 pb-3 text-gray-900  hover:text-[#ea000e] ">
+                    <a href="{{route('show')}}" class="@yield('spettacoli-nv-sm') flex items-center p-2 pb-3 text-white  hover:text-[#BAB700] ">
                         <span class="flex-1 whitespace-nowrap"> Spettacoli </span>
                     </a>
-                    <div class="border border-yellow-500"></div>
+                    <div class="border border-[#BAB700]"></div>
                 </li>
 
                 <li >
-                    <a href="{{route('event')}}" class="@yield('eventi-nv-sm') flex items-center p-2 pb-3 text-gray-900  hover:text-[#ea000e] ">
+                    <a href="{{route('event')}}" class="@yield('eventi-nv-sm') flex items-center p-2 pb-3 text-white  hover:text-[#BAB700] ">
                         <span class="flex-1 whitespace-nowrap "> Calendario </span>
                     </a>
-                    <div class="border border-yellow-500"></div>
+                    <div class="border border-[#BAB700]"></div>
                 </li>
 
                 <li >
-                    <a href="#" class="@yield('video-nv-sm')  hover:text-[#ea000e] pb-3 flex items-center p-2 text-gray-900">
+                    <a href="#" class="@yield('video-nv-sm')  hover:text-[#BAB700] pb-3 flex items-center p-2 text-white">
                         <span class="flex-1 whitespace-nowrap">Video</span>
                     </a>
-                    <div class="border border-yellow-500 "></div>
+                    <div class="border border-[#BAB700] "></div>
                 </li>
 
                 <li >
-                    <a href="{{route('contact')}}" class="@yield('contatti-nv-sm')  hover:text-[#ea000e] pb-3 flex items-center p-2 text-gray-900">
+                    <a href="{{route('contact')}}" class="@yield('contatti-nv-sm')  hover:text-[#BAB700] pb-3 flex items-center p-2 text-white">
                         <span class="flex-1 whitespace-nowrap">Contatti</span>
                     </a>
-                    <div class="border border-yellow-500 "></div>
+                    <div class="border border-[#BAB700]"></div>
                 </li>
             </ul>
         </div>
     </aside>
+
 
 <div class="pt-20">
 </div>
@@ -124,12 +125,12 @@
 
 
 
-<footer class="bg-white">
+<footer class="bg-[#353535]">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
                 <a href="{{route('home')}}" class="flex items-center">
-                    <span class="self-center text-4xl text-[#F77F00] font-semibold whitespace-nowrap font-neutrafacebold">PAOLA RIZZI</span>
+                    <span class="self-center text-4xl text-[#BAB700] font-semibold whitespace-nowrap font-neutrafacebold">SIGNORA MARIA</span>
                 </a>
             </div>
             <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -144,21 +145,21 @@
                     </ul>
                 </div>
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                    <h2 class="mb-6 text-sm font-semibold text-white uppercase ">Legal</h2>
+                    <ul class=" font-medium">
                         <li class="mb-4">
-                            <a href="#" class="hover:underline">Privacy Policy</a>
+                            <a href="#" class="text-gray-300 hover:underline">Privacy Policy</a>
                         </li>
                         <li>
-                            <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                            <a href="#" class="text-gray-300 hover:underline">Terms &amp; Conditions</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr class="my-6 border-[#BAB700] sm:mx-auto lg:my-8" />
         <div class="sm:flex sm:items-center sm:justify-between">
-          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025. All Rights Reserved.
+          <span class="text-sm text-gray-300 ">© 2025. All Rights Reserved.
           </span>
         </div>
     </div>

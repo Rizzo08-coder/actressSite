@@ -9,7 +9,7 @@
 @endsection
 
 @section('spettacoli-nv-sm')
-    text-red-700
+    text-[#bab700]
 @endsection
 
 @section('body')
@@ -24,7 +24,7 @@
 
     <div class="mx-32 max-lg:mx-24 max-md:mx-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 mb-32">
         @foreach($show_list as $show)
-        <a href="{{route('singleshow.show',['name' => $show->title])}}" class="transition-transform transform hover:scale-110 duration-500 bg-white shadow-md rounded-lg overflow-hidden">
+        <a href="{{route('singleshow.show',['name' => $show->title])}}" class="shadow shadow-2xl transition-transform transform hover:scale-110 duration-500 bg-white shadow-md rounded-lg overflow-hidden">
             <img src="{{$show->img_url}}" class="w-full h-48 object-cover object-center">
             <div class="p-6 pb-2">
                 <h2 class="text-3xl font-bold text-[#F77F00] mb-4 text-center font-neutrafacebold ">{{strtoupper($show->title)}}</h2>

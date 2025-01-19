@@ -9,7 +9,7 @@
 @endsection
 
 @section('spettacoli-nv-sm')
-    text-red-700
+    text-[#bab700]
 @endsection
 
 @section('body')

@@ -9,17 +9,17 @@
 @endsection
 
 @section('contatti-nv-sm')
-    text-red-700
+    text-[#bab700]
 @endsection
 
 @section('body')
 
     <div class="md:h-screen">
-    <div class="relative mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-6  text-center  max-sm:text-md text-5xl text-[#BAB700] font-neutrafacebold">
+    <div class="relative mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-24 mb-6  text-center  max-sm:text-md text-5xl text-[#BAB700] font-neutrafacebold">
         I NOSTRI CONTATTI
     </div>
 
-        <div class="mx-32 max-sm:mx-12 max-md:mx-24 max-lg:mx-48 mt-32">
+        <div class="mx-32 max-sm:mx-12 max-md:mx-24 max-lg:mx-48 mt-20">
             <div class="w-full h-0.5 bg-[#BAB700]"></div>
         </div>
 

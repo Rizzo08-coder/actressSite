@@ -9,12 +9,12 @@
 @endsection
 
 @section('eventi-nv-sm')
-    text-red-700
+    text-[#bab700]
 @endsection
 
 @section('body')
-    @if(count($event_list) == 0)
-    <div class="h-screen">
+    @if(count($event_list) < 4)
+    <div class="h-screen mb-12">
     @endif
     <div class="relative mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-6  text-center  max-sm:text-md text-5xl text-[#BAB700] font-neutrafacebold">
         TUTTI GLI EVENTI
@@ -23,8 +23,6 @@
     <p class="relative mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-6  text-center text-2xl  max-sm:text-xl">
         Esplora l'elenco completo degli spettacoli e degli eventi in programma.
         Scopri le date, gli orari e le location per non perderti nessuna occasione!
-
-
     </p>
 
     <div class="mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-32 space-y-8 mb-32">
@@ -41,7 +39,7 @@
                     $eventDate = \Carbon\Carbon::parse($event->data);
                 @endphp
 
-                <div class="flex items-center justify-between p-4 border rounded-lg shadow-md bg-white">
+                <div class="shadow-2xl flex flex-col lg:flex-row items-center justify-between p-4 border rounded-lg shadow-md bg-white space-y-4 lg:space-y-0">
                     <!-- Sezione Sinistra: Data e Ora -->
                     <div class="flex items-center space-x-4">
                         <!-- Data -->
@@ -61,11 +59,14 @@
                     </div>
 
                     <!-- Sezione Destra: Spettacolo e Luogo -->
-                    <div class="text-right">
-                        <h2 class="text-xl font-bold text-gray-800">{{$event->show->title}}</h2>
-                        <span class="block text-xl text-gray-500">{{$event->place}}</span>
+
+                    <div class=" text-right flex flex-col max-lg:items-center">
+                        <h2 class="max-lg:text-center text-xl font-bold text-gray-800">{{$event->show->title}}</h2>
+                        <h2 class="max-lg:text-center text-xl text-gray-500">{{$event->place}}</h2>
                     </div>
+
                 </div>
+
 
 
 
@@ -73,7 +74,7 @@
         @endif
     </div>
 
-    @if(count($event_list) == 0)
+    @if(count($event_list) < 4)
     </div>
     @endif
 
