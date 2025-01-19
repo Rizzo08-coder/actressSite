@@ -14,7 +14,7 @@
 
 @section('body')
 
-    <div class=" mt-12 flex justify-center text-sm text-yellow-500 hover:text-black hover:scale-110 transition duration-500">
+    <div class=" mt-12 flex justify-center text-sm text-white hover:scale-110 transition duration-500">
         <a href="{{route('show')}}" class="flex items-center justify-center underline-link">
             <div class="inline-flex justify-center">
                 <div>
@@ -22,7 +22,7 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
                     </svg>
                 </div>
-                <div class="ml-2 text-sm flex place-self-center font-cabritobold">
+                <div class="ml-2 text-sm flex place-self-center ">
                     TORNA AGLI SPETTACOLI
                 </div>
             </div>
@@ -47,7 +47,7 @@
         }
     </style>
 
-    <div class="relative mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-8  text-center  max-sm:text-md text-5xl text-[#ea000e] font-neutrafacebold">
+    <div class="relative mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-8  text-center  max-sm:text-md text-5xl text-[#BAB700] font-neutrafacebold">
         {{strtoupper($show->title)}}
     </div>
     <div class="max-w-5xl mx-auto bg-white shadow rounded-lg overflow-hidden mb-32">
@@ -55,11 +55,8 @@
         <img src="{{$show->img_url}}" alt="Spettacolo" class="w-full h-120 object-cover">
 
 
-        <div class="relative mx-12   mt-12 mb-6  text-xl  max-sm:text-lg">
-            <div class="text-center text-4xl max-md:text-2xl text-yellow-500 font-neutrafacebold mb-6">
-                TRAMA
-            </div>
-            <p class="text-gray-600 leading-relaxed">
+        <div class="relative mx-12   mt-12 mb-6  text-2xl  max-sm:text-lg">
+            <p class="text-gray-600  leading-relaxed">
                 {{$show->description}}
             </p>
         </div>
@@ -67,12 +64,12 @@
         <div class="relative mx-12   mt-12 mb-6  text-center text-xl  max-sm:text-lg">
 
     <div class="mb-6">
-        <h2 class="text-xl text-gray-800 mb-2">Diretto da</h2>
-        <p class="text-gray-600">{{$show->directed_by}}</p>
+        <h2 class="text-xl text-gray-800 mb-2">Scritto e diretto da</h2>
+        <p class="text-gray-600 font-neutrafacebold text-2xl">{{$show->directed_by}}</p>
     </div>
     <div class="mb-6">
-        <h2 class="text-xl text-gray-800 mb-2">Collaboratore</h2>
-        <p class="text-gray-600">{{$show->collaboration}}</p>
+        <h2 class="text-xl text-gray-800 mb-2">Collaborazione di</h2>
+        <p class="text-gray-600 font-neutrafacebold text-2xl">{{$show->collaboration}}</p>
     </div>
         </div>
     </div>

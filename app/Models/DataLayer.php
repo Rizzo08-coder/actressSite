@@ -19,7 +19,7 @@ class DataLayer extends Model
     public function listNext3Events(){
         return Event::where('data', '>=', now()->toDateString()) // Filtra gli eventi futuri
         ->orderBy('data', 'asc')    // Ordina per data crescente
-        ->take(3)                   // Limita a 3 risultati
+        ->take(5)                   // Limita a 3 risultati
         ->get();
     }
 

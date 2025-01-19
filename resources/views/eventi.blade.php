@@ -16,19 +16,19 @@
     @if(count($event_list) == 0)
     <div class="h-screen">
     @endif
-    <div class="relative mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-6  text-center  max-sm:text-md text-5xl text-[#ea000e] font-neutrafacebold">
+    <div class="relative mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-6  text-center  max-sm:text-md text-5xl text-[#BAB700] font-neutrafacebold">
         TUTTI GLI EVENTI
     </div>
 
-    <p class="relative mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-6  text-center text-xl  max-sm:text-lg">
+    <p class="relative mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-6  text-center text-2xl  max-sm:text-xl">
         Esplora l'elenco completo degli spettacoli e degli eventi in programma.
         Scopri le date, gli orari e le location per non perderti nessuna occasione!
 
 
     </p>
 
-    <div class="mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-32space-y-8 mb-32">
-        <div class="w-full h-0.5 bg-yellow-500 mb-12"></div>
+    <div class="mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-32 space-y-8 mb-32">
+        <div class="w-full h-0.5 bg-[#BAB700] mb-12"></div>
         @if(count($event_list) == 0)
 
             <p class="text-center text-gray-500 text-xl">
@@ -36,36 +36,40 @@
             </p>
         @else
         @foreach($event_list as $event)
-            <div class="bg-white shadow-md rounded-lg overflow-hidden p-6 mb-8">
-                <!-- Titolo -->
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">{{strtoupper($event->show->title)}}</h2>
+                @php
+                    \Carbon\Carbon::setLocale('it');
+                    $eventDate = \Carbon\Carbon::parse($event->data);
+                @endphp
 
-                <!-- Dettagli evento -->
-                <div class="flex items-center justify-between text-lg">
-                    <!-- Posizione -->
-                    <div class="flex items-center">
-                        <span class="font-bold text-gray-700">📍</span>
-                        <span class="ml-2 text-gray-600">{{$event->place}}</span>
+                <div class="flex items-center justify-between p-4 border rounded-lg shadow-md bg-white">
+                    <!-- Sezione Sinistra: Data e Ora -->
+                    <div class="flex items-center space-x-4">
+                        <!-- Data -->
+                        <div class="text-center">
+                            <span class="block text-5xl font-bold text-[#F77F00]">{{$eventDate->day}}</span>
+                            <span class="block text-xl text-gray-500">{{$eventDate->translatedFormat('F')}} {{$eventDate->year}}</span>
+                        </div>
+
+                        <!-- Linea di separazione -->
+                        <div class="h-12 w-px bg-gray-300"></div>
+
+                        <!-- Ora -->
+                        <div class="text-center">
+                            <span class="block text-2xl font-bold text-gray-800">{{$eventDate->dayName}}</span>
+                            <span class="block text-3xl font-semibold text-gray-900">{{\Carbon\Carbon::parse($event->hour)->format('H:i')}}</span>
+                        </div>
                     </div>
 
-                    <!-- Data -->
-                    <div class="flex items-center mr-3">
-                        <span class="font-bold text-yellow-500">📅</span>
-                        <span class="ml-2 text-xl text-gray-600">
-                            {{\Carbon\Carbon::parse($event->data)->format('d/m/Y')}}
-                        </span>
-                    </div>
-
-                    <!-- Ora -->
-                    <div class="flex items-center">
-                        <span class="font-bold text-gray-700">⏰</span>
-                        <span class="ml-2 text-2xl text-gray-600">
-                            {{\Carbon\Carbon::parse($event->hour)->format('H:i')}}
-                        </span>
+                    <!-- Sezione Destra: Spettacolo e Luogo -->
+                    <div class="text-right">
+                        <h2 class="text-xl font-bold text-gray-800">{{$event->show->title}}</h2>
+                        <span class="block text-xl text-gray-500">{{$event->place}}</span>
                     </div>
                 </div>
-            </div>
-        @endforeach
+
+
+
+            @endforeach
         @endif
     </div>
 
