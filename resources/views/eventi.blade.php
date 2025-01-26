@@ -9,7 +9,7 @@
 @endsection
 
 @section('eventi-nv-sm')
-    text-[#bab700]
+    text-brandYellow
 @endsection
 
 @section('body')

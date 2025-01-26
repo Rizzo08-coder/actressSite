@@ -9,7 +9,7 @@
 @endsection
 
 @section('contatti-nv-sm')
-    text-[#bab700]
+    text-brandYellow
 @endsection
 
 @section('body')

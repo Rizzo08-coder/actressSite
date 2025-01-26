@@ -25,7 +25,7 @@
 
 
 
-<nav class="shadow-2xl border-gray-200 bg-[#BAB700]  fixed w-full top-0 z-50">
+<nav class="shadow-2xl border-gray-200 bg-brandYellow  fixed w-full top-0 z-50">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="{{route('home')}}" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <span class="self-center text-4xl text-white font-semibold whitespace-nowrap dark:text-white font-neutrafacebold">SIGNORA MARIA</span>
@@ -49,7 +49,7 @@
                     <a href="{{route('event')}}" class="@yield('eventi-nv') block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-white">Calendario</a>
                 </li>
                 <li>
-                    <a href="#" class="@yield('video-nv') block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-white">Video</a>
+                    <a href="{{route('video')}}" class="@yield('video-nv') block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-white">Video</a>
                 </li>
                 <li>
                     <a href="{{route('contact')}}" class="@yield('contatti-nv') block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-white">Contatti</a>
@@ -73,39 +73,39 @@
             <ul class="space-y-2 text-sm">
                 <li class="flex justify-center mb-6">
                     <a href="{{route('home')}}" class="flex items-center ">
-                            <span class="self-center text-4xl text-[#BAB700] font-neutrafacebold font-semibold whitespace-nowrap ">SIGNORA MARIA</span>
+                            <span class="self-center text-4xl text-brandYellow font-neutrafacebold font-semibold whitespace-nowrap ">SIGNORA MARIA</span>
                     </a>
                 </li>
                 <li class="mt-6 ">
                     <div class="border border-[#BAB700]"></div>
-                    <a href="{{route('home')}}" class="@yield('home-nv-sm') flex items-center p-2 pt-4 pb-3 text-white hover:text-[#BAB700] ">
+                    <a href="{{route('home')}}" class=" @yield('home-nv-sm') flex items-center p-2 pt-4 pb-3 hover:text-[#BAB700] ">
                         <span class="flex-1 whitespace-nowrap"> Home </span>
                     </a>
                     <div class="border border-[#BAB700]"></div>
                 </li>
                 <li >
-                    <a href="{{route('show')}}" class="@yield('spettacoli-nv-sm') flex items-center p-2 pb-3 text-white  hover:text-[#BAB700] ">
+                    <a href="{{route('show')}}" class=" @yield('spettacoli-nv-sm') flex items-center p-2 pb-3 hover:text-brandYellow  ">
                         <span class="flex-1 whitespace-nowrap"> Spettacoli </span>
                     </a>
                     <div class="border border-[#BAB700]"></div>
                 </li>
 
                 <li >
-                    <a href="{{route('event')}}" class="@yield('eventi-nv-sm') flex items-center p-2 pb-3 text-white  hover:text-[#BAB700] ">
+                    <a href="{{route('event')}}" class=" @yield('eventi-nv-sm') flex items-center p-2 pb-3 hover:text-[#BAB700] ">
                         <span class="flex-1 whitespace-nowrap "> Calendario </span>
                     </a>
                     <div class="border border-[#BAB700]"></div>
                 </li>
 
                 <li >
-                    <a href="#" class="@yield('video-nv-sm')  hover:text-[#BAB700] pb-3 flex items-center p-2 text-white">
+                    <a href="{{route('video')}}" class=" @yield('video-nv-sm')  hover:text-[#BAB700] pb-3 flex items-center p-2 ">
                         <span class="flex-1 whitespace-nowrap">Video</span>
                     </a>
                     <div class="border border-[#BAB700] "></div>
                 </li>
 
                 <li >
-                    <a href="{{route('contact')}}" class="@yield('contatti-nv-sm')  hover:text-[#BAB700] pb-3 flex items-center p-2 text-white">
+                    <a href="{{route('contact')}}" class=" @yield('contatti-nv-sm') hover:text-[#BAB700] pb-3 flex items-center p-2 ">
                         <span class="flex-1 whitespace-nowrap">Contatti</span>
                     </a>
                     <div class="border border-[#BAB700]"></div>

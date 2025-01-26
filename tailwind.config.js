@@ -13,6 +13,9 @@ module.exports = {
             screens:{
                 'all-screens':'100000px'
             },
+            colors: {
+                brandYellow: '#BAB700', // Nome del colore personalizzato
+            },
             fontFamily: {
                 neutrafacebold: ["Neutraface Bold"],
                 neutrafaceregular: ["Neutraface Regular"],
