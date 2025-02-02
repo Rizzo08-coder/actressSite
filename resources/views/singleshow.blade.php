@@ -47,7 +47,7 @@
         }
     </style>
 
-    <div class="relative mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-8  text-center  max-sm:text-md text-5xl text-[#BAB700] font-neutrafacebold">
+    <div class="relative mx-72 max-sm:mx-2 max-md:mx-24 max-lg:mx-48  mt-12 mb-8  text-center  max-sm:text-md text-5xl text-[#BAB700] font-neutrafacebold">
         {{strtoupper($show->title)}}
     </div>
     <div class="max-w-5xl mx-auto bg-white shadow rounded-lg overflow-hidden mb-32">

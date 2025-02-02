@@ -74,7 +74,6 @@
                     <h2 class="text-3xl  text-[#F77F00] mb-6 font-neutrafacebold">SCOPRI GLI SPETTACOLI</h2>
                     <p class="text-gray-600 mb-8 text-2xl mx-6 md:mx-12">
                             Esplora i nostri spettacoli e lasciati coinvolgere dall'incredibile interpretazione di Paola Rizzi.
-                            Cambiare scritta
                     </p>
                      <a href="{{route('show')}}" class="bg-[#F77F00] rounded rounded-md text-white px-6 py-3 hover:bg-[#d5730c] transition">
                          Scopri di più
