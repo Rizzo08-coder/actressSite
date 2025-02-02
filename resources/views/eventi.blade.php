@@ -13,11 +13,9 @@
 @endsection
 
 @section('body')
-    @if(count($event_list) < 4)
-    <div class="h-screen mb-12">
-    @endif
+
     <div class="relative mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-6  text-center  max-sm:text-md text-5xl text-[#BAB700] font-neutrafacebold">
-        TUTTI GLI EVENTI
+        CALENDARIO
     </div>
 
     <p class="relative mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-6  text-center text-2xl  max-sm:text-xl">
@@ -45,7 +43,7 @@
                         <!-- Data -->
                         <div class="text-center">
                             <span class="block text-5xl font-bold text-[#F77F00]">{{$eventDate->day}}</span>
-                            <span class="block text-xl text-gray-500">{{$eventDate->translatedFormat('F')}} {{$eventDate->year}}</span>
+                            <span class="block text-2xl text-gray-500">{{$eventDate->translatedFormat('F')}} {{$eventDate->year}}</span>
                         </div>
 
                         <!-- Linea di separazione -->
@@ -61,8 +59,8 @@
                     <!-- Sezione Destra: Spettacolo e Luogo -->
 
                     <div class=" text-right flex flex-col max-lg:items-center">
-                        <h2 class="max-lg:text-center text-xl font-bold text-gray-800">{{$event->show->title}}</h2>
-                        <h2 class="max-lg:text-center text-xl text-gray-500">{{$event->place}}</h2>
+                        <h2 class="max-lg:text-center text-xl font-bold text-gray-800">{{strtoupper($event->show->title)}}</h2>
+                        <h2 class="max-lg:text-center text-2xl text-gray-500">{{$event->place}}</h2>
                     </div>
 
                 </div>
@@ -74,9 +72,6 @@
         @endif
     </div>
 
-    @if(count($event_list) < 4)
-    </div>
-    @endif
 
 
 

@@ -18,8 +18,9 @@
     </div>
 
     <p class="relative mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-6  text-center text-2xl  max-sm:text-xl">
-        Esplora il mondo della <span class="font-neutrafacebold">Signora Maria</span>, la bresciana che con i suoi monologhi in dialetto conquista il cuore del pubblico,
-        regalando risate, emozioni e uno spaccato autentico della vita di tutti i giorni.
+        Scopri i monologhi in dialetto bresciano, scritti e diretti da <span class="text-[#F77F00] font-neutrafacebold">John Comini,</span> con la regia di
+        <span class="text-[#F77F00] font-neutrafacebold">Peppino Coscarelli</span> e la collaborazione tecnica di
+        <span class="text-[#F77F00] font-neutrafacebold">Luca Lombardi</span>
     </p>
 
     <div class="mx-32 max-lg:mx-24 max-md:mx-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 mb-32">

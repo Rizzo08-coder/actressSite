@@ -15,7 +15,7 @@
 @section('body')
 
     <div class="relative mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48 max-sm:mt-8  mt-16 mb-10 max-sm:mb-8  text-center  text-2xl max-sm:text-lg">
-        Paola Rizzi interpreta la <span class=" text-[#F77F00]">SIGNORA MARIA</span>, un personaggio comico che ha riscosso un incredibile successo.
+        Paola Rizzi interpreta la <span class=" text-[#F77F00] font-neutrafacebold">SIGNORA MARIA</span>, un personaggio comico che ha riscosso un incredibile successo.
         Il pubblico ha apprezzato le battute fulminanti, il ritmo comico e la magistrale interpretazione dell’attrice.
     </div>
 
@@ -23,20 +23,20 @@
     <div class="flex justify-center">
         <div class="scroll imgBox" style="--time:50s">
             <div>
-                <img src="{{url('/')}}/img/spettacolo7.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
-                <img src="{{url('/')}}/img/spettacolo1.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
-                <img src="{{url('/')}}/img/spettacolo3.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
-                <img src="{{url('/')}}/img/spettacolo1.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
-                <img src="{{url('/')}}/img/spettacolo5.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo1.jpg" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
                 <img src="{{url('/')}}/img/spettacolo2.jpg" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo3.webp" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo4.jpg" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo5.webp" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo6.jpg" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
             </div>
             <div>
-                <img src="{{url('/')}}/img/spettacolo7.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
-                <img src="{{url('/')}}/img/spettacolo1.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
-                <img src="{{url('/')}}/img/spettacolo3.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
-                <img src="{{url('/')}}/img/spettacolo1.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
-                <img src="{{url('/')}}/img/spettacolo5.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo1.jpg" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
                 <img src="{{url('/')}}/img/spettacolo2.jpg" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo3.webp" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo4.jpg" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo5.webp" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo6.jpg" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
             </div>
         </div>
 
@@ -47,16 +47,16 @@
     <div class="flex justify-center">
         <div class="scroll imgBox" style="--time:50s">
             <div>
-                <img src="{{url('/')}}/img/spettacolo7.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
-                <img src="{{url('/')}}/img/spettacolo1.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
-                <img src="{{url('/')}}/img/spettacolo3.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
-                <img src="{{url('/')}}/img/spettacolo1.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo7.jpg" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo8.webp" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo9.jpg" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo10.jpg" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
             </div>
             <div>
-                <img src="{{url('/')}}/img/spettacolo7.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
-                <img src="{{url('/')}}/img/spettacolo1.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
-                <img src="{{url('/')}}/img/spettacolo3.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
-                <img src="{{url('/')}}/img/spettacolo1.png" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo7.jpg" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo8.webp" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo9.jpg" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
+                <img src="{{url('/')}}/img/spettacolo10.jpg" class="rounded-lg w-128 h-80 object-cover max-sm:w-96 max-sm:h-64">
             </div>
         </div>
 
@@ -104,7 +104,7 @@
                     <!-- Data -->
                     <div class="text-center">
                         <span class="block text-5xl font-bold text-[#F77F00]">{{$eventDate->day}}</span>
-                        <span class="block text-xl text-gray-500">{{$eventDate->translatedFormat('F')}} {{$eventDate->year}}</span>
+                        <span class="block text-2xl text-gray-500">{{$eventDate->translatedFormat('F')}} {{$eventDate->year}}</span>
                     </div>
 
                     <!-- Linea di separazione -->
@@ -120,8 +120,8 @@
                 <!-- Sezione Destra: Spettacolo e Luogo -->
 
                 <div class=" text-right flex flex-col max-lg:items-center">
-                    <h2 class="max-lg:text-center text-xl font-bold text-gray-800">{{$event->show->title}}</h2>
-                    <h2 class="max-lg:text-center text-xl text-gray-500">{{$event->place}}</h2>
+                    <h2 class="max-lg:text-center text-xl font-bold text-gray-800">{{strtoupper($event->show->title)}}</h2>
+                    <h2 class="max-lg:text-center text-2xl text-gray-500">{{$event->place}}</h2>
                 </div>
 
             </div>
