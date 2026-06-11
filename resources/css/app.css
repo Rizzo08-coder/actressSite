@@ -2,16 +2,135 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: 'Neutraface Bold';
-    src: url('/public/fonts/Neutraface Text Bold.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
 }
 
-@font-face {
-    font-family: 'Neutraface Regular';
-    src: url('/public/fonts/Neutraface Text Book.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
+@layer components {
+    /* Gli alias "bold" usano Fredoka in peso SemiBold per i titoli/etichette */
+    .font-neutrafacebold {
+        font-weight: 600;
+    }
+    .font-neutrafaceregular {
+        font-weight: 400;
+    }
+}
+
+@layer components {
+    /* Etichetta tipo "kicker" sopra ai titoli */
+    .eyebrow {
+        @apply inline-block font-neutrafacebold uppercase tracking-[0.25em] text-sm;
+    }
+
+    /* Bottoni */
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-neutrafacebold uppercase tracking-wider text-sm transition-all duration-300;
+    }
+    .btn-primary {
+        @apply btn bg-carrot text-white shadow-soft hover:bg-carrot-dark hover:-translate-y-0.5;
+    }
+    .btn-outline {
+        @apply btn border-2 border-white/70 text-white hover:bg-white hover:text-ink;
+    }
+    .btn-olive {
+        @apply btn bg-olive text-white hover:bg-olive-dark hover:-translate-y-0.5;
+    }
+
+    /* Biglietto teatrale: card bianca con "fori" laterali.
+       Imposta --punch al colore dello sfondo della sezione. */
+    .ticket {
+        position: relative;
+        background: #ffffff;
+        border-radius: 1.5rem;
+    }
+    .ticket::before,
+    .ticket::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 26px;
+        height: 26px;
+        border-radius: 9999px;
+        background: var(--punch, #6C6053);
+        transform: translateY(-50%);
+    }
+    .ticket::before { left: -13px; }
+    .ticket::after { right: -13px; }
+
+    /* Linea tratteggiata "strappo" del biglietto */
+    .ticket-perf {
+        border-left: 2px dashed #DCD3C0;
+    }
+
+    /* Link con sottolineatura animata (nav) */
+    .nav-link {
+        position: relative;
+        transition: color 0.25s ease;
+    }
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        height: 3px;
+        width: 0;
+        border-radius: 9999px;
+        background: currentColor;
+        transition: width 0.3s ease;
+    }
+    .nav-link:hover::after,
+    .nav-link.is-active::after {
+        width: 100%;
+    }
+}
+
+/* Marquee fotografico (sostituisce slideshow.css) */
+.marquee {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee__track {
+    display: flex;
+    gap: 1.5rem;
+    flex-shrink: 0;
+    align-items: center;
+    animation: marquee var(--time, 60s) linear infinite;
+}
+.marquee:hover .marquee__track {
+    animation-play-state: paused;
+}
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - 1.5rem)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee__track { animation: none; }
+    html { scroll-behavior: auto; }
+}
+
+/* Reveal allo scroll (sostituisce AOS). Lo stato nascosto è attivo solo con
+   JS abilitato (.js su <html>): senza JS il contenuto resta sempre visibile. */
+@media (prefers-reduced-motion: no-preference) {
+    .js [data-aos] {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+        will-change: opacity, transform;
+    }
+    .js [data-aos].aos-in {
+        opacity: 1;
+        transform: none;
+    }
 }

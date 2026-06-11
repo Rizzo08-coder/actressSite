@@ -1,39 +1,46 @@
 @extends('layout.master')
 
-@section('title')
-    Video
-@endsection
+@section('title', 'Video')
 
-@section('video-nv')
-    text-white
-@endsection
-
-@section('video-nv-sm')
-    text-brandYellow
-@endsection
+@section('video-nv', 'is-active text-white')
+@section('video-nv-sm', 'text-olive-light')
 
 @section('body')
-    <div
-        class="relative mx-72 max-sm:mx-12 max-md:mx-24 max-lg:mx-48  mt-12 mb-6  text-center  max-sm:text-md text-5xl text-[#BAB700] font-neutrafacebold">
-        I NOSTRI VIDEO
-    </div>
 
-    <div class="mt-12 grid grid-cols-2 max-lg:grid-cols-1 gap-24 mb-24 mx-32 max-lg:mx-12">
+    <section class="bg-cocoa py-20">
+        <div class="mx-auto max-w-screen-xl px-6 lg:px-8">
 
-        @foreach ($video_list as $videoId)
-
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <iframe
-                    class="w-full h-96"
-                    src="https://www.youtube.com/embed/{{ $videoId }}"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
+            <div class="mx-auto max-w-3xl text-center" data-aos="fade-up">
+                <h1 class="font-neutrafacebold text-5xl uppercase leading-tight text-olive-light sm:text-6xl">I nostri video</h1>
             </div>
-        @endforeach
-    </div>
+
+            <div class="mx-auto mt-10 h-1 w-24 rounded-full bg-olive" data-aos="fade-up"></div>
+
+            @if(count($video_list) > 0)
+                <div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+                    @foreach($video_list as $videoId)
+                        <div class="overflow-hidden rounded-3xl bg-cocoa-deep shadow-ticket ring-1 ring-white/10" data-aos="fade-up">
+                            <div class="relative aspect-video">
+                                <iframe
+                                    class="absolute inset-0 h-full w-full"
+                                    src="https://www.youtube.com/embed/{{ $videoId }}"
+                                    title="Video della Signora Maria"
+                                    loading="lazy"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <p class="mt-12 rounded-3xl bg-white/5 p-12 text-center text-cream/70">
+                    Nessun video disponibile al momento.
+                </p>
+            @endif
+
+        </div>
+    </section>
 
 @endsection
-

@@ -1,79 +1,107 @@
 @extends('layout.master')
 
-@section('title')
-    Spettacoli
-@endsection
+@section('title', $show->title)
 
-@section('spettacoli-nv')
-    text-white
-@endsection
-
-@section('spettacoli-nv-sm')
-    text-brandYellow
-@endsection
+@section('spettacoli-nv', 'is-active text-white')
+@section('spettacoli-nv-sm', 'text-olive-light')
 
 @section('body')
 
-    <div class=" mt-12 flex justify-center text-sm text-white hover:scale-110 transition duration-500">
-        <a href="{{route('show')}}" class="flex items-center justify-center underline-link">
-            <div class="inline-flex justify-center">
-                <div>
-                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
-                    </svg>
+    <section class="bg-cream py-14 text-ink lg:py-20">
+        <div class="mx-auto max-w-5xl px-6 lg:px-8">
+
+            {{-- Torna indietro --}}
+            <a href="{{ route('show') }}" class="inline-flex items-center gap-2 font-neutrafacebold text-sm uppercase tracking-wider text-cocoa transition hover:gap-3 hover:text-carrot">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M11 6l-6 6 6 6"/></svg>
+                Torna agli spettacoli
+            </a>
+
+            {{-- Titolo --}}
+            <h1 class="mt-6 font-neutrafacebold text-4xl uppercase leading-tight text-carrot sm:text-5xl" data-aos="fade-up">
+                {{ strtoupper($show->title) }}
+            </h1>
+            <div class="mt-4 h-1 w-24 rounded-full bg-olive" data-aos="fade-up"></div>
+
+            {{-- Foto: proporzione naturale, su fondo chiaro, incorniciata --}}
+            <figure class="mt-9" data-aos="fade-up">
+                <img src="{{ $show->img_url }}" alt="Spettacolo {{ $show->title }}"
+                     fetchpriority="high" decoding="async"
+                     class="mx-auto block h-auto max-h-[68vh] w-auto max-w-full rounded-3xl shadow-ticket ring-1 ring-cocoa/10">
+            </figure>
+
+            {{-- Descrizione + scheda crediti --}}
+            <div class="mt-12 grid gap-8 lg:grid-cols-3 lg:gap-12">
+                <div class="lg:col-span-2" data-aos="fade-up">
+                    <p class="text-lg leading-relaxed text-cocoa">{{ $show->description }}</p>
                 </div>
-                <div class="ml-2 text-sm flex place-self-center ">
-                    TORNA AGLI SPETTACOLI
-                </div>
+
+                <aside class="lg:col-span-1" data-aos="fade-up" data-aos-delay="100">
+                    <div class="rounded-3xl bg-white p-7 shadow-soft ring-1 ring-cocoa/5">
+                        <h2 class="font-neutrafacebold text-xs uppercase tracking-[0.25em] text-olive-dark">Crediti</h2>
+                        <div class="mt-5 space-y-5">
+                            @if($show->directed_by)
+                                <div>
+                                    <p class="text-xs uppercase tracking-wide text-cocoa/60">Scritto e diretto da</p>
+                                    <p class="mt-1 font-neutrafacebold text-lg text-ink">{{ $show->directed_by }}</p>
+                                </div>
+                            @endif
+                            @if($show->collaboration)
+                                <div>
+                                    <p class="text-xs uppercase tracking-wide text-cocoa/60">Collaborazione di</p>
+                                    <p class="mt-1 font-neutrafacebold text-lg text-ink">{{ $show->collaboration }}</p>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                </aside>
             </div>
-        </a>
-    </div>
 
-    <style>
-        .underline-link {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-        }
+            {{-- Prossime date di questo spettacolo --}}
+            <div class="mt-16" data-aos="fade-up">
+                <div class="flex items-end justify-between gap-4">
+                    <h2 class="font-neutrafacebold text-2xl uppercase text-ink sm:text-3xl">Prossime date</h2>
+                    <a href="{{ route('event') }}" class="hidden font-neutrafacebold text-sm uppercase tracking-wider text-carrot transition hover:text-carrot-dark sm:inline-flex sm:items-center sm:gap-2">
+                        Calendario
+                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                </div>
+                <div class="mt-3 h-1 w-16 rounded-full bg-olive"></div>
 
-        .underline-link::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -2px; /* Adjust as needed */
-            width: 100%;
-            height: 1px; /* Adjust as needed */
-            background-color: currentColor;
-        }
-    </style>
+                @if($events->isNotEmpty())
+                    <div class="mt-7 grid gap-4 sm:grid-cols-2">
+                        @foreach($events as $ev)
+                            @php
+                                \Carbon\Carbon::setLocale('it');
+                                $d = \Carbon\Carbon::parse($ev->data);
+                            @endphp
+                            <div class="flex min-w-0 items-center gap-4 rounded-2xl bg-white p-4 shadow-soft ring-1 ring-cocoa/5">
+                                <div class="flex h-16 w-16 flex-shrink-0 flex-col items-center justify-center rounded-xl bg-cream text-center">
+                                    <span class="font-neutrafacebold text-2xl leading-none text-carrot">{{ $d->day }}</span>
+                                    <span class="mt-0.5 text-[10px] font-neutrafacebold uppercase tracking-[0.15em] text-cocoa/70">{{ strtoupper($d->translatedFormat('M')) }}</span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <p class="line-clamp-2 font-neutrafacebold leading-snug text-ink [overflow-wrap:anywhere]">{{ $ev->place }}</p>
+                                    <p class="mt-0.5 text-sm text-cocoa">{{ ucfirst($d->dayName) }} · ore {{ \Carbon\Carbon::parse($ev->hour)->format('H:i') }}</p>
+                                </div>
+                                <a href="{{ route('event.calendar', $ev) }}" title="Aggiungi al calendario" aria-label="Aggiungi al calendario"
+                                   class="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-cocoa/15 text-cocoa/70 transition hover:border-carrot/40 hover:bg-carrot/10 hover:text-carrot-dark">
+                                    <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 2v3M16 2v3M3.5 9h17M5 5h14a1 1 0 011 1v13a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 13v4M10 15h4"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
+                @else
+                    <div class="mt-7 flex flex-col items-start gap-4 rounded-2xl bg-white p-6 shadow-soft ring-1 ring-cocoa/5 sm:flex-row sm:items-center sm:justify-between">
+                        <p class="text-cocoa">Nessuna data in programma per questo spettacolo al momento.</p>
+                        <a href="{{ route('event') }}" class="btn-olive">Vedi tutte le date</a>
+                    </div>
+                @endif
+            </div>
 
-    <div class="relative mx-72 max-sm:mx-2 max-md:mx-24 max-lg:mx-48  mt-12 mb-8  text-center  max-sm:text-md text-5xl text-[#BAB700] font-neutrafacebold">
-        {{strtoupper($show->title)}}
-    </div>
-    <div class="max-w-5xl mx-auto bg-white shadow rounded-lg overflow-hidden mb-32">
-        <!-- Immagine dello spettacolo -->
-        <img src="{{$show->img_url}}" alt="Spettacolo" class="w-full h-120 object-cover">
-
-
-        <div class="relative mx-12   mt-12 mb-6  text-2xl  max-sm:text-lg">
-            <p class="text-gray-600  leading-relaxed">
-                {{$show->description}}
-            </p>
         </div>
-
-        <div class="relative mx-12   mt-12 mb-6  text-center text-xl  max-sm:text-lg">
-
-    <div class="mb-6">
-        <h2 class="text-xl text-gray-800 mb-2">Scritto e diretto da</h2>
-        <p class="text-gray-600 font-neutrafacebold text-2xl">{{$show->directed_by}}</p>
-    </div>
-    <div class="mb-6">
-        <h2 class="text-xl text-gray-800 mb-2">Collaborazione di</h2>
-        <p class="text-gray-600 font-neutrafacebold text-2xl">{{$show->collaboration}}</p>
-    </div>
-        </div>
-    </div>
-
-
+    </section>
 
 @endsection

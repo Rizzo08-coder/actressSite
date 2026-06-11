@@ -11,6 +11,7 @@ Route::get('/',[FrontController::class,'getHome'])->name('home');
 Route::get('/show',[ShowController::class, 'getShows'])->name('show');
 Route::get('/show/{name}', [ShowController::class, 'show'])->name('singleshow.show');
 Route::get('/event', [EventController::class,'getEvents'])->name('event');
+Route::get('/event/{event}/calendar.ics', [EventController::class,'calendar'])->name('event.calendar');
 Route::get('/video',[VideoController::class, 'getVideos'])->name('video');
 Route::get('/contact-us', [ContactController::class, 'contact'])->name('contact');
 
